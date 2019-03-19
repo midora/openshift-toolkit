@@ -90,7 +90,7 @@ do
 
     set +e
     #Export all bc,dc,is,route,svc yamls
-    oc export all -n ${project} -o yaml > ${yaml_dir}/project.yaml
+    oc export all -n ${project} -o yaml --raw=true > ${yaml_dir}/project.yaml
 
     #Export all the rolebindings
     oc get rolebindings -n ${project} -o yaml --export=true > ${yaml_dir}/rolebindings.yaml
